@@ -6,8 +6,13 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "extends": [
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
-  ]
+  // "extends": [
+  //   "plugin:@typescript-eslint/recommended",
+  //   "plugin:prettier/recommended"
+  // ],
+  "plugins": ["prettier"],
+  "rules": {
+    "semi": "off",
+    "singleQuote": "off"
+  }
 }
