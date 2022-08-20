@@ -1,5 +1,18 @@
-import { Link } from './openspec.types'
-import { Url } from 'url'
+import type { Link, Tag } from './openspec.types'
+import type { Url } from 'url'
+
+export interface LibSpec {
+  /**
+   * Version Number
+   */
+  libspec: '0001'
+
+  info: LibraryInfo
+
+  functions: LibraryFunction[]
+
+  types: LibraryType[]
+}
 
 export type LibraryInfo = {
   id: string
@@ -57,19 +70,9 @@ export type LibraryFunction = {
   source: Url
   description?: string
   usage: string
-  tags: string[]
+  tags: Tag[]
   links: Link[]
   attributes?: LibraryFunctionAttribute[]
   returns?: LibraryFunctionReturn[]
   examples?: LibraryFunctionExample[]
-}
-
-export interface LibSpec {
-  libspec: '0001'
-
-  info: LibraryInfo
-
-  functions: LibraryFunction[]
-
-  types: LibraryType[]
 }

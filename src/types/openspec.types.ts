@@ -8,6 +8,12 @@ type Link = {
   url: Url
 }
 
+type Tag = {
+  id: string
+  title: string
+  description?: string
+}
+
 export {
   // Specification version
   CliSpecV1,
@@ -16,4 +22,5 @@ export {
   // Generic types
   Link,
   Url,
+  Tag,
 }

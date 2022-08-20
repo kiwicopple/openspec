@@ -1,5 +1,15 @@
-import { Link } from './openspec.types'
-import { Url } from 'url'
+import type { Link, Tag } from './openspec.types'
+import type { Url } from 'url'
+export interface CliSpec {
+  /**
+   * Version Number
+   */
+  clispec: '001'
+
+  info: CliInfo
+
+  commands: CliCommand[]
+}
 
 export type CliInfo = {
   id: string
@@ -18,17 +28,9 @@ export type CliCommand = {
   title: string
   summary: string
   description: string
-  tags: string[]
+  tags: Tag[]
   links: Link[]
   usage: string
   subcommands: string[]
   options: string
-}
-
-export interface CliSpec {
-  clispec: '001'
-
-  info: CliInfo
-
-  commands: CliCommand[]
 }
