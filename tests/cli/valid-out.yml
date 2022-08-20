@@ -1,0 +1,86 @@
+{
+  "clispec": "001",
+  "info": {
+    "id": "openspec",
+    "version": "1.0.0",
+    "title": "OpenSpec",
+    "language": "sh",
+    "source": "https://github.com/kiwicopple/openspec",
+    "bugs": "https://github.com/kiwicopple/openspec/issues",
+    "spec": "https://github.com/kiwicopple/openspec/tests/cli_v1/valid.yml",
+    "tags": [
+      {
+        "id": "validation",
+        "title": "Validation",
+        "description": "Commands for handling spec validation."
+      }
+    ],
+    "description": "The missing specifications.\n\nWhile we have a good spec for describing RESTful APIs (OpenAPI), there isn't anything robust for other tooling. \nOpenSpec aims to fill the gap:\n\n- `ConfigSpec`: describe configuration, such as environment variables.\n- `LibSpec`: describe a Client Library, such as a Go or Javascript package.\n- `CliSpec`: describe the commands and usage of a CLI (similar to manpages).\n\nAll specs are written in YAML - for many of the same reasons that OpenAPI is in YAML/JSON.\n",
+    "options": "```sh\n  -h, --help    help for openspec\n```"
+  },
+  "commands": [
+    {
+      "id": "command-validate",
+      "title": "openspec validate",
+      "summary": "Commands for handling spec validation.",
+      "description": "The `validate` command takes a file input and will verify that it is correct.\nThe command will detect which type of spec it is automatically, or throw an error if it doesn't recognise the type.\n",
+      "tags": [
+        "validation"
+      ],
+      "links": [],
+      "usage": "```sh\nopenspec validate [flags]\n```",
+      "subcommands": [],
+      "flags": [
+        {
+          "id": "flag-validate-input",
+          "option": "--input",
+          "alias": "-i",
+          "description": "The input file.",
+          "required": true
+        }
+      ],
+      "examples": [
+        {
+          "id": "example-validate CliSpec",
+          "title": "Validate a spec file file.",
+          "code": "```sh\nopenspec validate --input ./spec/libspec.yml\n```\n"
+        }
+      ]
+    },
+    {
+      "id": "command-dereference",
+      "title": "openspec dereference",
+      "summary": "Replaces all references.",
+      "description": "Replaces all references with their referenced value. Only for LibSpec.\n",
+      "tags": [
+        "validation"
+      ],
+      "links": [],
+      "usage": "```sh\nopenspec dereference [flags]\n```",
+      "subcommands": [],
+      "flags": [
+        {
+          "id": "flag-dereference-input",
+          "option": "--input",
+          "alias": "-i",
+          "description": "The input file.",
+          "required": true
+        },
+        {
+          "id": "flag-dereference-output",
+          "option": "--output",
+          "alias": "-o",
+          "description": "The input file.",
+          "required": true
+        }
+      ],
+      "examples": [
+        {
+          "id": "example-dereference CliSpec",
+          "title": "Dereference a spec file file.",
+          "code": "```sh\nopenspec dereference --input ./spec/libspec.yml --output ./spec/libspec.dereferenced.yml\n```\n"
+        }
+      ]
+    }
+  ]
+}

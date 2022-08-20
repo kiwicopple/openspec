@@ -14,8 +14,10 @@ describe('Hand all inputs', () => {
    */
   it('validate', () => {
     const consoleSpy = jest.spyOn(console, 'log')
-    handleInput('validate')
-    expect(consoleSpy).toHaveBeenCalledWith('Not yet implemented.')
+    handleInput('validate', {
+      input: './tests/cli/valid.yml',
+      output: './tests/cli/valid-out.yml',
+    })
   })
 
   /**

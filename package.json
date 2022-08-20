@@ -51,7 +51,8 @@
   },
   "jest": {
     "roots": [
-      "<rootDir>/tests"
+      "<rootDir>/tests",
+      "<rootDir>/src"
     ],
     "transform": {
       "^.+\\.(ts)$": "ts-jest"
@@ -61,5 +62,8 @@
         "tsconfig": "tsconfig.json"
       }
     }
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
   }
 }
