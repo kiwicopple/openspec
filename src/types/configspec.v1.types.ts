@@ -1,5 +1,4 @@
 import type { Link, Tag } from './openspec.types'
-import type { Url } from 'url'
 
 export interface ConfigSpec {
   /**
@@ -16,9 +15,17 @@ export type ConfigInfo = {
   id: string
   version: string
   title: string
-  source: Url
-  bugs: Url
-  spec: Url
+  /**
+   * URL to the source code
+   */
+  source: string
+  /**
+   * URL that users can use to report bugs
+   */
+  bugs: string
+  /**
+   * URL to the spec document
+   */
   description: string
   tags: Tag[]
 }

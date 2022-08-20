@@ -1,5 +1,4 @@
 import type { Link, Tag } from './openspec.types'
-import type { Url } from 'url'
 export interface CliSpec {
   /**
    * Version Number
@@ -16,9 +15,18 @@ export type CliInfo = {
   version: string
   title: string
   language: string
-  source: Url
-  bugs: Url
-  spec: Url
+  /**
+   * URL to the source code
+   */
+  source: string
+  /**
+   * URL that users can use to report bugs
+   */
+  bugs: string
+  /**
+   * URL to the spec document
+   */
+  spec: string
   description: string
   options: string
 }

@@ -1,5 +1,4 @@
 import type { Link, Tag } from './openspec.types'
-import type { Url } from 'url'
 
 export interface LibSpec {
   /**
@@ -19,9 +18,17 @@ export type LibraryInfo = {
   version: string
   title: string
   language: string
-  source: Url
-  bugs: Url
-  spec: Url
+  /**
+   * URL to the source code
+   */
+  source: string
+  /**
+   * URL that users can use to report bugs
+   */
+  bugs: string
+  /**
+   * URL to the spec document
+   */
   description: string
   options: string
 }
@@ -30,7 +37,6 @@ export type LibraryType = {
   id: string
   title: string
   summary: string
-  source: Url
   value: string
   ref?: LibraryType
   links: Link[]
@@ -67,7 +73,6 @@ export type LibraryFunction = {
   id: string
   title: string
   summary: string
-  source: Url
   description?: string
   usage: string
   tags: Tag[]
