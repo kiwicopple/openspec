@@ -1,7 +1,11 @@
 import * as OpenSpec from './types/openspec.types'
+import { handleInput } from './handler'
+const argv = require('minimist')(process.argv.slice(2))
 
-export const start = () => console.log('Hello, World!')
+function main(command: string[], options?: any) {
+  handleInput(command.join(' '), options)
+}
 
-start()
-
-export { OpenSpec }
+// Run everything
+main(argv['_'], argv)
+export { main, OpenSpec }
