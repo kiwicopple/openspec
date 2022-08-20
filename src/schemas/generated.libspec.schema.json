@@ -35,6 +35,9 @@
         },
         "LibraryType": {
             "properties": {
+                "description": {
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -180,18 +183,7 @@
                     },
                     "tags": {
                         "items": {
-                            "properties": {
-                                "description": {
-                                    "type": "string"
-                                },
-                                "id": {
-                                    "type": "string"
-                                },
-                                "title": {
-                                    "type": "string"
-                                }
-                            },
-                            "type": "object"
+                            "type": "string"
                         },
                         "type": "array"
                     },
@@ -228,6 +220,23 @@
                 "source": {
                     "description": "URL to the source code",
                     "type": "string"
+                },
+                "tags": {
+                    "items": {
+                        "properties": {
+                            "description": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 },
                 "title": {
                     "type": "string"

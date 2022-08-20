@@ -1,4 +1,4 @@
-import type { Link, Tag } from './openspec.types'
+import type { Link, TagDefinition } from './openspec.types'
 
 export interface ConfigSpec {
   /**
@@ -27,13 +27,13 @@ export type ConfigInfo = {
    * URL to the spec document
    */
   description: string
-  tags: Tag[]
+  tags: TagDefinition[]
 }
 
 export type ConfigParameter = {
   id: string
   title: string
-  tags: Tag[]
+  tags: string[]
   required: boolean
   description: string
   links: Link[]

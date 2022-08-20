@@ -7,7 +7,7 @@ type Link = {
   url: string
 }
 
-type Tag = {
+type TagDefinition = {
   id: string
   title: string
   description?: string
@@ -20,5 +20,5 @@ export {
   LibSpecV1,
   // Generic types
   Link,
-  Tag,
+  TagDefinition,
 }

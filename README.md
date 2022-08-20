@@ -7,7 +7,7 @@ OpenSpec aims to fill the gap:
 
 - `ConfigSpec`: describe configuration, such as environment variables.
 - `LibSpec`: describe a Client Library, such as a Go or Javascript package.
-- `CliSpec`: descibe the commands and usage of a CLI (similar to manpages).
+- `CliSpec`: describe the commands and usage of a CLI (similar to manpages).
 
 All specs are written in YAML - for many of the same reasons that OpenAPI is in YAML/JSON.
 

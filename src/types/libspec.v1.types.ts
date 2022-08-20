@@ -1,4 +1,4 @@
-import type { Link, Tag } from './openspec.types'
+import type { Link, TagDefinition } from './openspec.types'
 
 export interface LibSpec {
   /**
@@ -30,6 +30,7 @@ export type LibraryInfo = {
    * URL to the spec document
    */
   description: string
+  tags: TagDefinition[]
   options: string
 }
 
@@ -37,6 +38,7 @@ export type LibraryType = {
   id: string
   title: string
   summary: string
+  description: string
   value: string
   ref?: LibraryType
   links: Link[]
@@ -75,7 +77,7 @@ export type LibraryFunction = {
   summary: string
   description?: string
   usage: string
-  tags: Tag[]
+  tags: string[]
   links: Link[]
   attributes?: LibraryFunctionAttribute[]
   returns?: LibraryFunctionReturn[]

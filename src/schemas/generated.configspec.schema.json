@@ -79,18 +79,7 @@
                     },
                     "tags": {
                         "items": {
-                            "properties": {
-                                "description": {
-                                    "type": "string"
-                                },
-                                "id": {
-                                    "type": "string"
-                                },
-                                "title": {
-                                    "type": "string"
-                                }
-                            },
-                            "type": "object"
+                            "type": "string"
                         },
                         "type": "array"
                     },

@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "properties": {
         "clispec": {
-            "description": "Version Number",
+            "description": "Version Number.",
             "enum": [
                 "001"
             ],
@@ -12,40 +12,16 @@
             "items": {
                 "properties": {
                     "description": {
+                        "description": "A full description of what the command does.",
                         "type": "string"
                     },
-                    "id": {
-                        "type": "string"
-                    },
-                    "links": {
+                    "examples": {
+                        "description": "A list of examples.",
                         "items": {
                             "properties": {
-                                "name": {
+                                "code": {
                                     "type": "string"
                                 },
-                                "url": {
-                                    "type": "string"
-                                }
-                            },
-                            "type": "object"
-                        },
-                        "type": "array"
-                    },
-                    "options": {
-                        "type": "string"
-                    },
-                    "subcommands": {
-                        "items": {
-                            "type": "string"
-                        },
-                        "type": "array"
-                    },
-                    "summary": {
-                        "type": "string"
-                    },
-                    "tags": {
-                        "items": {
-                            "properties": {
                                 "description": {
                                     "type": "string"
                                 },
@@ -60,10 +36,73 @@
                         },
                         "type": "array"
                     },
+                    "flags": {
+                        "description": "Flags specific to this command.",
+                        "items": {
+                            "properties": {
+                                "alias": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string"
+                                },
+                                "id": {
+                                    "type": "string"
+                                },
+                                "required": {
+                                    "type": "boolean"
+                                },
+                                "title": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "description": "A unique identifier for the command. This is used to identify the command when it is used as a subcommand.",
+                        "type": "string"
+                    },
+                    "links": {
+                        "description": "A list of links. Usually used for documentation purposes.",
+                        "items": {
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "url": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "subcommands": {
+                        "description": "A list of IDs of commands that can be used as subcommands.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "summary": {
+                        "description": "A brief description of the command, usually a short phrase for documentation purposes.",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "A list of tags. Usually used for documentation purposes.",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
                     "title": {
+                        "description": "A text representing the command.",
                         "type": "string"
                     },
                     "usage": {
+                        "description": "A code snippet that can be used to run the command. For example: \"command subcommand [flags]\"",
                         "type": "string"
                     }
                 },
@@ -74,11 +113,35 @@
         "info": {
             "properties": {
                 "bugs": {
-                    "description": "URL that users can use to report bugs",
+                    "description": "URL that users can use to report bugs.",
                     "type": "string"
                 },
                 "description": {
                     "type": "string"
+                },
+                "flags": {
+                    "description": "A list of global options that can be used with the CLI.",
+                    "items": {
+                        "properties": {
+                            "alias": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "required": {
+                                "type": "boolean"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 },
                 "id": {
                     "type": "string"
@@ -86,16 +149,30 @@
                 "language": {
                     "type": "string"
                 },
-                "options": {
-                    "type": "string"
-                },
                 "source": {
-                    "description": "URL to the source code",
+                    "description": "URL to the source code.",
                     "type": "string"
                 },
                 "spec": {
-                    "description": "URL to the spec document",
+                    "description": "URL to the spec document.",
                     "type": "string"
+                },
+                "tags": {
+                    "items": {
+                        "properties": {
+                            "description": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
                 },
                 "title": {
                     "type": "string"
