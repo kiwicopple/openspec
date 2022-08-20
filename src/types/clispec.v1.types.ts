@@ -1,4 +1,4 @@
-import { SpecLink } from './general.types'
+import { Link } from './openspec.types'
 import { Url } from 'url'
 
 export type CliInfo = {
@@ -19,7 +19,7 @@ export type CliCommand = {
   summary: string
   description: string
   tags: string[]
-  links: SpecLink[]
+  links: Link[]
   usage: string
   subcommands: string[]
   options: string

@@ -1,4 +1,4 @@
-import { SpecLink } from './general.types'
+import { Link } from './openspec.types'
 import { Url } from 'url'
 
 export type LibraryInfo = {
@@ -20,7 +20,7 @@ export type LibraryType = {
   source: Url
   value: string
   ref?: LibraryType
-  links: SpecLink[]
+  links: Link[]
 }
 
 export type LibraryFunctionAttribute = {
@@ -45,7 +45,7 @@ export type LibraryFunctionExample = {
   id: string
   title: string
   description?: string
-  links: SpecLink[]
+  links: Link[]
   code: string
   returns?: LibraryFunctionReturn
 }
@@ -58,14 +58,14 @@ export type LibraryFunction = {
   description?: string
   usage: string
   tags: string[]
-  links: SpecLink[]
+  links: Link[]
   attributes?: LibraryFunctionAttribute[]
   returns?: LibraryFunctionReturn[]
   examples?: LibraryFunctionExample[]
 }
 
 export interface LibSpec {
-  Libspec: '001'
+  libspec: '0001'
 
   info: LibraryInfo
 

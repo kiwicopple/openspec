@@ -1,4 +1,4 @@
-import { SpecLink } from './general.types'
+import { Link } from './openspec.types'
 import { Url } from 'url'
 
 export type Tag = {
@@ -24,11 +24,11 @@ export type ConfigParameter = {
   tags: string[]
   required: boolean
   description: string
-  links: SpecLink[]
+  links: Link[]
 }
 
 export interface ConfigSpec {
-  configspec: '001'
+  configspec: '0001'
 
   info: ConfigInfo
 
