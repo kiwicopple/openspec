@@ -16,15 +16,17 @@ All specs are written in YAML - for many of the same reasons that OpenAPI is in 
 With a standard way of describing tools, we can create generators and translators.
 For example, we can use them to build docs, generate tests, or generate client libraries in different languages. 
 
-
 ## Usage
 
-```
-npx openspec new configspec
-npx openspec new libspec
-npx openspec new clispec
-```
+This CLI will:
 
+- validate that a spec is accurate
+- transform a spec between YAML and JSON 
+- "Dereference" any values. For example, if a Function argument references a type then it will populate the `$ref` with the value.
+  
+Future ideas:
+
+- Generators: in theory the spec can be used to generate docs (eg, ManPages), boilerplate code, and tests for your CLI/Lib/etc
 
 ## Development
 
