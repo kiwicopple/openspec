@@ -21,7 +21,7 @@ functions:
   - id: function-create-client
     $def: 'some/definition/file'
     $ref: 'references.ToThe.function'
-    summary: 'Initializing'
+    title: 'Initializing'
     name: 'createClient()'
     tags: []
     links: []
@@ -38,7 +38,7 @@ functions:
       ```
     examples:
       - id: example-init-basic
-        summary: Create a Supabase client.
+        title: Create a Supabase client.
         code: |
           ```js
           import { createClient } from '@supabase/supabase-js'
@@ -47,7 +47,7 @@ functions:
           const supabase = createClient('https://xyzcompany.supabase.co', 'public-anon-key')
           ```
       - id: example-init-with-params
-        summary: With additional parameters
+        title: With additional parameters
         code: |
           ```js
           import { createClient } from '@supabase/supabase-js'
@@ -62,7 +62,7 @@ functions:
           const supabase = createClient("https://xyzcompany.supabase.co", "public-anon-key", options)
           ```
       - id: example-init-scheams
-        summary: API schemas
+        title: API schemas
         description: |
           By default the API server points to the `public` schema. You can enable other database schemas within the Dashboard.
           Go to `Settings > API > Schema` and add the schema which you want to expose to the API.
@@ -78,7 +78,7 @@ functions:
           })
           ```
       - id: example-init-fetch
-        summary: Custom `fetch` implementation
+        title: Custom `fetch` implementation
         description: |
           `supabase-js` uses the [`cross-fetch`](https://www.npmjs.com/package/cross-fetch) library to make HTTP requests,
           but an alternative `fetch` implementation can be provided as an option.
