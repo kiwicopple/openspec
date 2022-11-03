@@ -1,0 +1,102 @@
+# The spec divided into 3 main sections:
+#   info: general information about the library
+#   types: a list of custom types
+#   functions: public functions which the user can access
+
+sdkspec: '001'
+
+info:
+  id: reference/supabase-js
+  version: 'next' # {string} The current version number of the library.
+  title: Supabase Client
+  language: 'javascript' # {string} The language where this library is used.
+  source: 'https://github.com/supabase/supabase-js' # {string} Where developers can find the source code.
+  bugs: 'https://github.com/supabase/supabase-js/issues' # {string} Where developers can file bugs.
+  spec: 'https://github.com/supabase/supabase-js/spec/libspec-v001.yml' # {string} Where developers can find this spec (to link directly in the docs).
+  description: |
+
+    Supabase JavaScript.
+
+functions:
+  - id: function-create-client
+    $def: 'some/definition/file'
+    $ref: 'references.ToThe.function'
+    summary: 'Initializing'
+    name: 'createClient()'
+    tags: []
+    links: []
+    description: |
+      You can initialize a new Supabase client using the `createClient()` method.
+
+      The Supabase client is your entrypoint to the rest of the Supabase functionality
+      and is the easiest way to interact with everything we offer within the Supabase ecosystem.
+    usage: |
+      ```js
+      import { createClient } from '@supabase/supabase-js'
+
+      const supabase = createClient('<SUPABASE_URL>', '<SUPABASE_ANON_KEY>')
+      ```
+    examples:
+      - id: example-init-basic
+        summary: Create a Supabase client.
+        code: |
+          ```js
+          import { createClient } from '@supabase/supabase-js'
+
+          // Create a single supabase client for interacting with your database
+          const supabase = createClient('https://xyzcompany.supabase.co', 'public-anon-key')
+          ```
+      - id: example-init-with-params
+        summary: With additional parameters
+        code: |
+          ```js
+          import { createClient } from '@supabase/supabase-js'
+
+          const options = {
+            schema: 'public',
+            headers: { 'x-my-custom-header': 'my-app-name' },
+            autoRefreshToken: true,
+            persistSession: true,
+            detectSessionInUrl: true
+          }
+          const supabase = createClient("https://xyzcompany.supabase.co", "public-anon-key", options)
+          ```
+      - id: example-init-scheams
+        summary: API schemas
+        description: |
+          By default the API server points to the `public` schema. You can enable other database schemas within the Dashboard.
+          Go to `Settings > API > Schema` and add the schema which you want to expose to the API.
+
+          Note: each client connection can only access a single schema, so the code above can access the `other_schema` schema but cannot access the `public` schema.
+        code: |
+          ```js
+          import { createClient } from '@supabase/supabase-js'
+
+          // Provide a custom schema. Defaults to "public".
+          const supabase = createClient('https://xyzcompany.supabase.co', 'public-anon-key', {
+            schema: 'other_schema'
+          })
+          ```
+      - id: example-init-fetch
+        summary: Custom `fetch` implementation
+        description: |
+          `supabase-js` uses the [`cross-fetch`](https://www.npmjs.com/package/cross-fetch) library to make HTTP requests,
+          but an alternative `fetch` implementation can be provided as an option.
+          This is most useful in environments where `cross-fetch` is not compatible (for instance Cloudflare Workers).
+        code: |
+          ```js
+          import { createClient } from '@supabase/supabase-js'
+
+          const supabase = createClient('https://xyzcompany.supabase.co', 'public-anon-key', {
+            fetch: fetch.bind(globalThis)
+          })
+          ```
+
+types:
+  - id: string
+    title: string
+    summary: string
+    description: string
+    value: string
+    ref?: LibraryType
+    links: Link[]
