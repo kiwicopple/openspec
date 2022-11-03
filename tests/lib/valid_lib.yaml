@@ -98,5 +98,3 @@ types:
     summary: string
     description: string
     value: string
-    ref?: LibraryType
-    links: Link[]
